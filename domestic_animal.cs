@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace domestic_animal_practice2
 {
-    internal class domestic_animal
+    public class domestic_animal
     {
+        string nameOfSpesies;
+        uint age;
+        double weight;
+        double value;
 
     }
 }
