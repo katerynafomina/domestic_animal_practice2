@@ -13,9 +13,9 @@ namespace domesticAnimal
     {
         static void Main(string[] args)
         {
-            //Animal horse = new Animal();
-            //horse.readFrom();
-            //Console.WriteLine(horse);
+            Animal horse = new Animal();
+            horse.readFrom();
+            Console.WriteLine(horse);
 
             Animal cow = new Animal("корова", 3, 23, 100);
             Console.WriteLine(cow);
@@ -114,8 +114,9 @@ namespace domesticAnimal
 
             }
             Animal noName = new Animal();
-            farm.Add(noName.dialog());
-            for(int i = 0; i < n; i++)
+            noName = noName.dialog();
+            farm.Add(noName);
+            for(int i = 0; i < farm.Count; i++)
             {
                 Console.WriteLine(farm[i]);
 

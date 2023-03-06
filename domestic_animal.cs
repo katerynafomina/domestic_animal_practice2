@@ -113,9 +113,13 @@ namespace domesticAnimal
         }
         public void readFrom()
         {
+            Console.Write("Вид тварини: ");
             type = Console.ReadLine();
+            Console.Write("Вiк: ");
             age = uint.Parse(Console.ReadLine());
+            Console.Write("Вага: ");
             weight = double.Parse(Console.ReadLine());
+            Console.Write("Цiна м'яса: ");
             priceOfMeat = double.Parse(Console.ReadLine());
         }
         public override string ToString()
