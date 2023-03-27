@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,21 +10,30 @@ namespace domesticAnimal
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = System.Text.Encoding.Unicode;
+
+            Animal animal1 = new Animal("корова", 1, 23, 100, "молоко");
+            Animal animal2 = (Animal)animal1.Clone();
+            animal1.AddYear(2);
+            animal2.AddYear(2);
+            Console.WriteLine(animal1);
+            Console.WriteLine(animal2);
+
             Animal horse = new Animal();
-            horse.readFrom();
+            horse.ReadFrom();
             Console.WriteLine(horse);
 
-            Animal cow = new Animal("корова", 3, 23, 100);
+            Animal cow = new Animal("корова", 3, 23, 100, "молоко");
             Console.WriteLine(cow);
-            cow.showProductivity();
-            Animal sheep = new Animal("вiвця", 0.5, 9, 120);
+            cow.ShowProductivity();
+            Animal sheep = new Animal("вiвця", 0.5, 9, 120, "шерсть");
             Console.WriteLine(sheep);
-            sheep.addYear(1);
+            sheep.AddYear(1);
             Console.WriteLine(sheep);
             Console.WriteLine($"\nЧи бiльша корова за вiвцю за загальною цiною? {cow > sheep}");
-            Animal pig = new Animal("свиня", 8, 13, 95);
-            Animal chicken = new Animal("курка", 7, 1.7, 105);
-            Animal rabbit = new Animal("кролик", 0.9, 3, 125);
+            Animal pig = new Animal("свиня", 8, 13, 95, "м'ясо");
+            Animal chicken = new Animal("курка", 7, 1.7, 105, "яйця");
+            Animal rabbit = new Animal("кролик", 0.9, 3, 125, "м'ясо");
             List<Animal> farm = new() { cow, sheep, pig, chicken, rabbit };
             int n = farm.Count;
 
@@ -47,12 +53,12 @@ namespace domesticAnimal
             }
             Console.WriteLine($"\nНайбiльша вага: {maxWeight}");
 
-            double maxProductivity = farm[0].productivity;
+            double maxProductivity = farm[0].Productivity;
             for (int i = 0; i < n; i++)
             {
-                if (farm[i].productivity > maxProductivity)
+                if (farm[i].Productivity > maxProductivity)
                 {
-                    maxProductivity = farm[i].productivity;
+                    maxProductivity = farm[i].Productivity;
                 }
             }
             Console.WriteLine($"\nНайбiльша продуктивнiсть: {maxProductivity}");
@@ -76,7 +82,7 @@ namespace domesticAnimal
 
             for (int i = 0; i < n; i++)
             {
-                farm[i].addYear(1);
+                farm[i].AddYear(1);
             }
             Console.WriteLine("\n\nПройшов 1 рiк");
             for (int i = 0; i < n; i++)
@@ -87,16 +93,19 @@ namespace domesticAnimal
 
             for (int i = 0; i < n; i++)
             {
-                farm[i].addYear(2);
+                farm[i].AddYear(2);
             }
             Console.WriteLine("\n\nПройшло 2 роки");
             for (int i = 0; i < n; i++)
             {
                 Console.WriteLine(farm[i]);
-
             }
-            Console.WriteLine("\n\n");
-            farm.Sort((x, y) => x.productivity.CompareTo(y.productivity));
+
+            farm.Sort();
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine(farm[i]);
+            }
             Console.WriteLine($"3 найпродуктивнiшi тварини: {farm[n - 1].Type}, {farm[n - 2].Type}, {farm[n - 3].Type}");
 
             List<Animal> oldAnimal = new();
@@ -107,22 +116,34 @@ namespace domesticAnimal
                     oldAnimal.Add(farm[i]);
                 }
             }
-            Console.WriteLine("\n\nТварини старшi 10 рокiв:");
+            Console.WriteLine("\n\nTварини старшi 10 рокiв:");
             for (int i = 0; i < oldAnimal.Count; i++)
             {
                 Console.WriteLine(oldAnimal[i]);
-
             }
+
             Animal noName = new Animal();
-            noName = noName.dialog();
+            noName = noName.Dialog();
             farm.Add(noName);
-            for(int i = 0; i < farm.Count; i++)
+            for (int i = 0; i < farm.Count; i++)
             {
                 Console.WriteLine(farm[i]);
-
             }
             Console.WriteLine("\n\n");
 
+            Cow cow1 = new Cow(1, 23, 100, 0.5);
+            Console.WriteLine(cow1);
+            cow1.AddYear(2);
+            Console.WriteLine(cow1);
+            cow1.FeedWith(Cow.Feed.Corn);
+            Console.WriteLine(cow1);
+            cow1.FeedWith(Cow.Feed.FeedGrassFed);
+            Console.WriteLine(cow1);
+            Sheep sheep1 = new Sheep(3.6, 13, 120);
+            Console.WriteLine($"\n{sheep1}");
+            sheep1.HotSummer();
+            Console.WriteLine(sheep1);
+            
         }
     }
 }
