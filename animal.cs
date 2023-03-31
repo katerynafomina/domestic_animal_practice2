@@ -8,6 +8,7 @@ namespace domesticAnimal
 {
     public class Animal : IComparable<Animal>, ICloneable
     {
+        public event EventHandler ReachedProductivityAge;
         private string type;
         private double age;
         private double weight;
@@ -28,6 +29,7 @@ namespace domesticAnimal
         }
         public Animal(string type, double age, double weight, double priceOfMeat, string profit)
         {
+            ReachedProductivityAge += AnimalReachedProductivityAge;
             this.type = type;
             this.age = age;
             this.weight = weight;
@@ -66,8 +68,24 @@ namespace domesticAnimal
 
         public double Age
         {
-            get { return age; }
+            get
+            {
+                if (age >= 2)
+                {
+                    OnReachedProductivityAge(EventArgs.Empty);
+                }
+                return age;
+            }
             set { age = value; }
+        }
+        protected virtual void OnReachedProductivityAge(EventArgs e)
+        {
+            ReachedProductivityAge?.Invoke(this, e);
+        }
+        protected virtual void AnimalReachedProductivityAge(object sender, EventArgs e)
+        {
+            Animal animal = sender as Animal;
+            Console.WriteLine($"{animal.Type} reached productivity age!");
         }
 
         public double Weight
@@ -139,11 +157,11 @@ namespace domesticAnimal
         public object Clone()
         {
             return new Animal
-            {
-                type = this.type,
-                age = this.age,
-                weight = this.weight,
-                priceOfMeat = this.priceOfMeat,
+            { 
+                type = this.type, 
+                age = this.age, 
+                weight = this.weight, 
+                priceOfMeat = this.priceOfMeat, 
                 productivity = this.productivity,
                 profit = this.profit
             };

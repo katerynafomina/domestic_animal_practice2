@@ -22,7 +22,7 @@ namespace domesticAnimal
         }
         public void HotSummer()
         {
-            if (Age >= 5)
+            if (Age >= 2)
             {
                 Productivity *= 0.7;
                 Productivity = Math.Round(Productivity, 3);
@@ -51,7 +51,7 @@ namespace domesticAnimal
             Console.Write("Цiна м'яса: ");
             PriceOfMeat = double.Parse(Console.ReadLine());
             Console.WriteLine();
-            if (Age >= 5)
+            if (Age >= 2)
             {
                 Productivity = Math.Round(this.Age * this.Weight / 20, 3);
             }

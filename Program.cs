@@ -19,11 +19,11 @@ namespace domesticAnimal
             Console.WriteLine(animal1);
             Console.WriteLine(animal2);
 
-            //Animal horse = new Animal();
-            //horse.ReadFrom();
-            //Console.WriteLine(horse);
+            Animal horse = new Animal();
+            horse.ReadFrom();
+            Console.WriteLine(horse);
 
-            Animal cow = new Animal("корова", 3, 23, 100, "молоко");
+            Animal cow = new Animal("корова", 3, 23, 100);
             Console.WriteLine(cow);
             cow.ShowProductivity();
             Animal sheep = new Animal("вiвця", 0.5, 9, 120, "шерсть");
@@ -130,19 +130,6 @@ namespace domesticAnimal
                 Console.WriteLine(farm[i]);
             }
             Console.WriteLine("\n\n");
-
-            Cow cow1 = new Cow(1, 23, 100, 0.5);
-            Console.WriteLine(cow1);
-            cow1.AddYear(2);
-            Console.WriteLine(cow1);
-            cow1.FeedWith(Cow.Feed.Corn);
-            Console.WriteLine(cow1);
-            cow1.FeedWith(Cow.Feed.FeedGrassFed);
-            Console.WriteLine(cow1);
-            Sheep sheep1 = new Sheep(3.6, 13, 120);
-            Console.WriteLine($"\n{sheep1}");
-            sheep1.HotSummer();
-            Console.WriteLine(sheep1);
 
         }
     }
