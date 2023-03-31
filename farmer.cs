@@ -21,7 +21,7 @@ namespace domesticAnimal
         public void FarmerWithAnimal(object sender, EventArgs e)
         {
             Animal animal = sender as Animal;
-            Console.WriteLine("Фермер {0} повідомляє, що тварина {1} досягла продуктивного віку!", name, animal.Type);
+            Console.WriteLine("Фермер {0} повідомляє, що тварина {1} досягла продуктивного віку! ", name, animal.Type);
         }
     }
 }

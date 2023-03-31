@@ -19,11 +19,11 @@ namespace domesticAnimal
             Console.WriteLine(animal1);
             Console.WriteLine(animal2);
 
-            Animal horse = new Animal();
-            horse.ReadFrom();
-            Console.WriteLine(horse);
+            //Animal horse = new Animal();
+            //horse.ReadFrom();
+            //Console.WriteLine(horse);
 
-            Animal cow = new Animal("корова", 3, 23, 100);
+            Animal cow = new Animal("корова", 3, 23, 100, "молоко");
             Console.WriteLine(cow);
             cow.ShowProductivity();
             Animal sheep = new Animal("вiвця", 0.5, 9, 120, "шерсть");
@@ -122,15 +122,27 @@ namespace domesticAnimal
                 Console.WriteLine(oldAnimal[i]);
             }
 
-            Animal noName = new Animal();
-            noName = noName.Dialog();
-            farm.Add(noName);
-            for (int i = 0; i < farm.Count; i++)
-            {
-                Console.WriteLine(farm[i]);
-            }
-            Console.WriteLine("\n\n");
+            //Animal noName = new Animal();
+            //noName = noName.Dialog();
+            //farm.Add(noName);
+            //for (int i = 0; i < farm.Count; i++)
+            //{
+            //    Console.WriteLine(farm[i]);
+            //}
+            //Console.WriteLine("\n\n");
 
+            //Farmer farmer1 = new Farmer("");
+            //SubscribeToAnimal(farmer1, farm);
+            //farm[0].AddYear(1);
+            //farm[2].AddYear(2);
+            //Console.WriteLine();
         }
+        //static void SubscribeToAnimal(Farmer farmer, List<Animal> animals)
+        //{
+        //    foreach (Animal a in animals)
+        //    {
+        //        a.FarmerWithAnimalEvent += farmer.FarmerWithAnimal;
+        //    }
+        //}
     }
 }

@@ -1,0 +1,15 @@
+C:\Users\Користувач\Desktop\програмінг\c#\domestic_animal_practice2\bin\Debug\net6.0\domestic_animal_practice2.exe
+C:\Users\Користувач\Desktop\програмінг\c#\domestic_animal_practice2\bin\Debug\net6.0\domestic_animal_practice2.deps.json
+C:\Users\Користувач\Desktop\програмінг\c#\domestic_animal_practice2\bin\Debug\net6.0\domestic_animal_practice2.runtimeconfig.json
+C:\Users\Користувач\Desktop\програмінг\c#\domestic_animal_practice2\bin\Debug\net6.0\domestic_animal_practice2.dll
+C:\Users\Користувач\Desktop\програмінг\c#\domestic_animal_practice2\bin\Debug\net6.0\domestic_animal_practice2.pdb
+C:\Users\Користувач\Desktop\програмінг\c#\domestic_animal_practice2\obj\Debug\net6.0\domestic_animal_practice2.csproj.AssemblyReference.cache
+C:\Users\Користувач\Desktop\програмінг\c#\domestic_animal_practice2\obj\Debug\net6.0\domestic_animal_practice2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Користувач\Desktop\програмінг\c#\domestic_animal_practice2\obj\Debug\net6.0\domestic_animal_practice2.AssemblyInfoInputs.cache
+C:\Users\Користувач\Desktop\програмінг\c#\domestic_animal_practice2\obj\Debug\net6.0\domestic_animal_practice2.AssemblyInfo.cs
+C:\Users\Користувач\Desktop\програмінг\c#\domestic_animal_practice2\obj\Debug\net6.0\domestic_animal_practice2.csproj.CoreCompileInputs.cache
+C:\Users\Користувач\Desktop\програмінг\c#\domestic_animal_practice2\obj\Debug\net6.0\domestic_animal_practice2.dll
+C:\Users\Користувач\Desktop\програмінг\c#\domestic_animal_practice2\obj\Debug\net6.0\refint\domestic_animal_practice2.dll
+C:\Users\Користувач\Desktop\програмінг\c#\domestic_animal_practice2\obj\Debug\net6.0\domestic_animal_practice2.pdb
+C:\Users\Користувач\Desktop\програмінг\c#\domestic_animal_practice2\obj\Debug\net6.0\domestic_animal_practice2.genruntimeconfig.cache
+C:\Users\Користувач\Desktop\програмінг\c#\domestic_animal_practice2\obj\Debug\net6.0\ref\domestic_animal_practice2.dll

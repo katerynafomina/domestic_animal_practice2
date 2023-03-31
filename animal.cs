@@ -9,15 +9,14 @@ namespace domesticAnimal
     public class Animal : IComparable<Animal>, ICloneable
     {
         public event EventHandler ReachedProductivityAge;
+        public event EventHandler FarmerWithAnimalEvent;
         private string type;
         private double age;
         private double weight;
         private double priceOfMeat;
         private double productivity;
         private string profit;
-        public delegate void AnimalDelegate();
-        public event AnimalDelegate ReachProductivityAge;
-
+        
         public Animal()
         {
             type = "";
@@ -85,9 +84,12 @@ namespace domesticAnimal
         protected virtual void AnimalReachedProductivityAge(object sender, EventArgs e)
         {
             Animal animal = sender as Animal;
-            Console.WriteLine($"{animal.Type} reached productivity age!");
+            Console.WriteLine($"Тварина {animal.Type} досягла продуктивного віку");
         }
-
+        protected virtual void OnFarmerWithAnimalEvent(EventArgs e)
+        {
+            ReachedProductivityAge?.Invoke(this, e);
+        }
         public double Weight
         {
             get { return weight; }
@@ -166,19 +168,7 @@ namespace domesticAnimal
                 profit = this.profit
             };
         }
-        public void reachProductivity()
-        {
-            if (productivity != 0)
-            {
-                Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                Console.WriteLine($"Тварина {type} досягла продуктивного віку");
-                Console.ResetColor();
-                if (ReachProductivityAge != null)
-                {
-                    ReachProductivityAge();
-                }
-            }
-        }
+        
         public int CompareTo(Animal other)
         {
             if (other == null)
