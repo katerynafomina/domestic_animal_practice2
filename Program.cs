@@ -37,11 +37,19 @@ namespace domesticAnimal
             List<Animal> farm = new() { cow, sheep, pig, chicken, rabbit };
             int n = farm.Count;
 
-
             for (int i = 0; i < n; i++)
             {
                 Console.WriteLine(farm[i]);
             }
+
+            Console.WriteLine($"\nЦіна курки та свині: {pig + chicken} грн");
+
+            double totalPrice = 0.0;
+            for (int i = 0; i < n; i++)
+            {
+                totalPrice = farm[i] + totalPrice;
+            }
+            Console.WriteLine($"\nЗагальна ціна всіх тварин в класі: {totalPrice} грн");
 
             double maxWeight = farm[0].Weight;
             for (int i = 0; i < n; i++)

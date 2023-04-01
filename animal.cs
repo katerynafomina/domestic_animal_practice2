@@ -16,7 +16,7 @@ namespace domesticAnimal
         private double priceOfMeat;
         private double productivity;
         private string profit;
-        
+
         public Animal()
         {
             type = "";
@@ -159,16 +159,16 @@ namespace domesticAnimal
         public object Clone()
         {
             return new Animal
-            { 
-                type = this.type, 
-                age = this.age, 
-                weight = this.weight, 
-                priceOfMeat = this.priceOfMeat, 
+            {
+                type = this.type,
+                age = this.age,
+                weight = this.weight,
+                priceOfMeat = this.priceOfMeat,
                 productivity = this.productivity,
                 profit = this.profit
             };
         }
-        
+
         public int CompareTo(Animal other)
         {
             if (other == null)
@@ -193,6 +193,14 @@ namespace domesticAnimal
         public static bool operator <=(Animal a, Animal b)
         {
             return a.Price <= b.Price;
+        }
+        public static double operator +(Animal a, Animal b)
+        {
+            return a.Price + b.Price;
+        }
+        public static double operator +(Animal a, double val)
+        {
+            return a.Price + val;
         }
         public virtual void ReadFrom()
         {
